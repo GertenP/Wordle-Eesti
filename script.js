@@ -34,11 +34,14 @@ for (let i = 0; i < klaviatuur_rida1_list.length; i++) {
     let nupp = document.createElement('button')
     nupp.textContent = klaviatuur_rida1_list[i]
     nupp.addEventListener('click', () => {
-        console.log(nupp.textContent);
-        nupp.style.backgroundColor = "#333333";
-        nupp.style.borderColor = "#333333";
-        nupp.style.color = "#6D6D6D";
-        lisa_t2ht(nupp.textContent)
+        if (järg <= 5) {
+            nupp.style.backgroundColor = "#333333";
+            nupp.style.borderColor = "#333333";
+            nupp.style.color = "#6D6D6D";
+            lisa_t2ht(nupp.textContent)
+
+            console.log(nupp.textContent);
+        }
     })
     klaviatuuri_rida1.appendChild(nupp)
 }
@@ -48,12 +51,15 @@ for (let i = 0; i < klaviatuur_rida2_list.length; i++) {
     let nupp = document.createElement('button')
     nupp.textContent = klaviatuur_rida2_list[i]
     nupp.addEventListener('click', () => {
-        nupp.style.backgroundColor = "#333333";
-        nupp.style.borderColor = "#333333";
-        nupp.style.color = "#6D6D6D";
-        lisa_t2ht(nupp.textContent)
+        if (järg <= 5) {
+            nupp.style.backgroundColor = "#333333";
+            nupp.style.borderColor = "#333333";
+            nupp.style.color = "#6D6D6D";
+            lisa_t2ht(nupp.textContent)
 
-        console.log(nupp.textContent);
+            console.log(nupp.textContent);
+        }
+
     })
     klaviatuuri_rida2.appendChild(nupp)
 }
@@ -68,19 +74,24 @@ for (let i = 0; i < klaviatuur_rida3_list.length; i++) {
             console.log("Okei");
 
         } else if (nupp.textContent == "ENTER") {
-            console.log(hetkene_rida, järg)
-            hetkene_rida++;
+            if (järg >= 5) {
+
+                console.log(hetkene_rida, järg)
+                järg = 1;
+                hetkene_rida++;
+
+            }
         } else {
-            nupp.style.backgroundColor = "#333333";
-            nupp.style.borderColor = "#333333";
-            nupp.style.color = "#6D6D6D";
-            lisa_t2ht(nupp.textContent)
+            if (järg <= 5) {
+                nupp.style.backgroundColor = "#333333";
+                nupp.style.borderColor = "#333333";
+                nupp.style.color = "#6D6D6D";
+                lisa_t2ht(nupp.textContent)
+
+                console.log(nupp.textContent);
+            }
         }
     })
     klaviatuuri_rida3.appendChild(nupp)
 }
 
-for (let i = 1; i <= 5; i++) {
-    let kastike = document.getElementById("kast" + i.toString());
-    kastike.textContent = "A";
-}
