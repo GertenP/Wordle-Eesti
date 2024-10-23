@@ -4016,6 +4016,7 @@ eemalda_t2ht = () => {
     aktiivne_kast.textContent = "";
 }
 
+
 // Klaviatuuri lisamine
 
 let klaviatuuri_rida1 = document.getElementById("kt1");
@@ -4059,11 +4060,53 @@ for (let i = 0; i < klaviatuur_rida3_list.length; i++) {
     nupp.textContent = klaviatuur_rida3_list[i]
     nupp.addEventListener('click', () => {
         if (nupp.textContent == "KUSTUTA") {
-            eemalda_t2ht();
-            console.log("Okei");
+            if (järg > 1) {
+                eemalda_t2ht();
+                console.log("Okei");
+            }
+
 
         } else if (nupp.textContent == "ENTER") {
-            if (järg >= 5) {
+            console.log(järg);
+            let kast1 = document.getElementById("kast" + hetkene_rida.toString() + "1");
+            let kast2 = document.getElementById("kast" + hetkene_rida.toString() + "2");
+            let kast3 = document.getElementById("kast" + hetkene_rida.toString() + "3");
+            let kast4 = document.getElementById("kast" + hetkene_rida.toString() + "4");
+            let kast5 = document.getElementById("kast" + hetkene_rida.toString() + "5");
+
+            let yhine_s6na = kast1.textContent.toLocaleLowerCase() + kast2.textContent.toLocaleLowerCase() + kast3.textContent.toLocaleLowerCase() + kast4.textContent.toLocaleLowerCase() + kast5.textContent.toLocaleLowerCase();
+            console.log(yhine_s6na)
+            console.log(words.includes(yhine_s6na))
+            if (järg == 6 && words.includes(yhine_s6na) == true) {
+                if (yhine_s6na.charAt(0) == random_s6na.charAt(0)) {
+                    kast1.style.backgroundColor = "green";
+                } else if (random_s6na.includes(yhine_s6na.charAt(0))) {
+                    kast1.style.backgroundColor = "yellow"
+                }
+
+                if (yhine_s6na.charAt(1) == random_s6na.charAt(1)) {
+                    kast2.style.backgroundColor = "green";
+                } else if (random_s6na.includes(yhine_s6na.charAt(1))) {
+                    kast2.style.backgroundColor = "yellow"
+                }
+
+                if (yhine_s6na.charAt(2) == random_s6na.charAt(2)) {
+                    kast3.style.backgroundColor = "green";
+                } else if (random_s6na.includes(yhine_s6na.charAt(2))) {
+                    kast3.style.backgroundColor = "yellow"
+                }
+
+                if (yhine_s6na.charAt(3) == random_s6na.charAt(3)) {
+                    kast4.style.backgroundColor = "green";
+                } else if (random_s6na.includes(yhine_s6na.charAt(3))) {
+                    kast4.style.backgroundColor = "yellow"
+                }
+
+                if (yhine_s6na.charAt(4) == random_s6na.charAt(4)) {
+                    kast5.style.backgroundColor = "green";
+                } else if (random_s6na.includes(yhine_s6na.charAt(4))) {
+                    kast5.style.backgroundColor = "yellow"
+                }
 
                 console.log(hetkene_rida, järg)
                 järg = 1;
