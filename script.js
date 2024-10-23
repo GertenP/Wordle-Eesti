@@ -27,7 +27,6 @@ lisa_t2ht = (vajutatud_nupp) => {
     järg++;
 }
 
-
 // Klaviatuuri lisamine
 
 let klaviatuuri_rida1 = document.getElementById("kt1");
@@ -64,16 +63,19 @@ for (let i = 0; i < klaviatuur_rida3_list.length; i++) {
     let nupp = document.createElement('button')
     nupp.textContent = klaviatuur_rida3_list[i]
     nupp.addEventListener('click', () => {
-        if (nupp.textContent == "ENTER" || nupp.textContent == "KUSTUTA") {
-            console.log("Okei")
+        if (nupp.textContent == "KUSTUTA") {
+            eemalda_t2ht();
+            console.log("Okei");
+
+        } else if (nupp.textContent == "ENTER") {
+            console.log(hetkene_rida, järg)
+            hetkene_rida++;
         } else {
             nupp.style.backgroundColor = "#333333";
             nupp.style.borderColor = "#333333";
             nupp.style.color = "#6D6D6D";
             lisa_t2ht(nupp.textContent)
-
         }
-        console.log(nupp.textContent);
     })
     klaviatuuri_rida3.appendChild(nupp)
 }
