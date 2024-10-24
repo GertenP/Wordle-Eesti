@@ -3988,6 +3988,7 @@ var random_s6na = words[Math.floor(Math.random() * words.length)];
 let hetkene_rida = 1;
 let järg = 1;
 console.log(random_s6na)
+
 //kastid
 let katsed = document.getElementById('katsed')
 for (let i = 1; i <= 7; i++) {
@@ -4081,31 +4082,31 @@ for (let i = 0; i < klaviatuur_rida3_list.length; i++) {
                 if (yhine_s6na.charAt(0) == random_s6na.charAt(0)) {
                     kast1.style.backgroundColor = "green";
                 } else if (random_s6na.includes(yhine_s6na.charAt(0))) {
-                    kast1.style.backgroundColor = "yellow"
+                    kast1.style.backgroundColor = "#edda2d"
                 }
 
                 if (yhine_s6na.charAt(1) == random_s6na.charAt(1)) {
                     kast2.style.backgroundColor = "green";
                 } else if (random_s6na.includes(yhine_s6na.charAt(1))) {
-                    kast2.style.backgroundColor = "yellow"
+                    kast2.style.backgroundColor = "#edda2d"
                 }
 
                 if (yhine_s6na.charAt(2) == random_s6na.charAt(2)) {
                     kast3.style.backgroundColor = "green";
                 } else if (random_s6na.includes(yhine_s6na.charAt(2))) {
-                    kast3.style.backgroundColor = "yellow"
+                    kast3.style.backgroundColor = "#edda2d"
                 }
 
                 if (yhine_s6na.charAt(3) == random_s6na.charAt(3)) {
                     kast4.style.backgroundColor = "green";
                 } else if (random_s6na.includes(yhine_s6na.charAt(3))) {
-                    kast4.style.backgroundColor = "yellow"
+                    kast4.style.backgroundColor = "#edda2d"
                 }
 
                 if (yhine_s6na.charAt(4) == random_s6na.charAt(4)) {
                     kast5.style.backgroundColor = "green";
                 } else if (random_s6na.includes(yhine_s6na.charAt(4))) {
-                    kast5.style.backgroundColor = "yellow"
+                    kast5.style.backgroundColor = "#edda2d"
                 }
 
                 console.log(hetkene_rida, järg)
