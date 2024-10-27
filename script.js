@@ -3980,10 +3980,11 @@ words = ["aadam", "aadel", "aader",
     "žmuud",
     "žürii",
 ];
-klaviatuur_rida1_list = ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P", "Ü", "Õ"]
-klaviatuur_rida2_list = ["A", "S", "D", "F", "G", "H", "J", "K", "L", "Ö", "Ä"]
-klaviatuur_rida3_list = ["ENTER", "Z", "C", "V", "B", "N", "M", "Š", "Ž", "KUSTUTA"]
-
+let klaviatuur_rida1_list = ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P", "Ü", "Õ"]
+let klaviatuur_rida2_list = ["A", "S", "D", "F", "G", "H", "J", "K", "L", "Ö", "Ä"]
+let klaviatuur_rida3_list = ["ENTER", "Z", "C", "V", "B", "N", "M", "Š", "Ž", "KUSTUTA"]
+let vajutatud_klahvid = [];
+let hetkene_vajutatud_klahvid = [];
 var random_s6na = words[Math.floor(Math.random() * words.length)];
 let hetkene_rida = 1;
 let järg = 1;
@@ -4016,7 +4017,6 @@ eemalda_t2ht = () => {
     let aktiivne_kast = document.getElementById("kast" + hetkene_rida.toString() + järg.toString());
     aktiivne_kast.textContent = "";
 }
-
 
 // Klaviatuuri lisamine
 
@@ -4083,32 +4083,46 @@ for (let i = 0; i < klaviatuur_rida3_list.length; i++) {
                     kast1.style.backgroundColor = "green";
                 } else if (random_s6na.includes(yhine_s6na.charAt(0))) {
                     kast1.style.backgroundColor = "#edda2d"
+                } else {
+                    kast1.style.backgroundColor = "#333333"
                 }
 
                 if (yhine_s6na.charAt(1) == random_s6na.charAt(1)) {
                     kast2.style.backgroundColor = "green";
                 } else if (random_s6na.includes(yhine_s6na.charAt(1))) {
                     kast2.style.backgroundColor = "#edda2d"
+                } else {
+                    kast2.style.backgroundColor = "#333333"
                 }
 
                 if (yhine_s6na.charAt(2) == random_s6na.charAt(2)) {
                     kast3.style.backgroundColor = "green";
                 } else if (random_s6na.includes(yhine_s6na.charAt(2))) {
                     kast3.style.backgroundColor = "#edda2d"
+                } else {
+                    kast3.style.backgroundColor = "#333333"
                 }
 
                 if (yhine_s6na.charAt(3) == random_s6na.charAt(3)) {
                     kast4.style.backgroundColor = "green";
                 } else if (random_s6na.includes(yhine_s6na.charAt(3))) {
                     kast4.style.backgroundColor = "#edda2d"
+                } else {
+                    kast4.style.backgroundColor = "#333333"
                 }
 
                 if (yhine_s6na.charAt(4) == random_s6na.charAt(4)) {
                     kast5.style.backgroundColor = "green";
                 } else if (random_s6na.includes(yhine_s6na.charAt(4))) {
                     kast5.style.backgroundColor = "#edda2d"
+                } else {
+                    kast5.style.backgroundColor = "#333333"
                 }
-
+                vajutatud_klahvid.push(kast1.textContent());
+                vajutatud_klahvid.push(kast2.textContent());
+                vajutatud_klahvid.push(kast3.textContent());
+                vajutatud_klahvid.push(kast4.textContent());
+                vajutatud_klahvid.push(kast5.textContent());
                 console.log(hetkene_rida, järg)
                 järg = 1;
                 hetkene_rida++;
